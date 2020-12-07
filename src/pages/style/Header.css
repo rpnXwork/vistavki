@@ -1,0 +1,141 @@
+.App-header {
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }
+
+  .Logo {
+    z-index: 2;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    float: left;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    height: auto;
+    width: 120px;
+    /* background-color: #f7f7f71e; */
+    border-radius: 4px;
+  }
+  
+  .Menu {
+    z-index: 2;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    float: right;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding: 12px;
+    font-size: 18px; 
+    line-height: 24px;
+    border-radius: 4px;
+    align-items: center;
+  }
+  
+  .menu-item {
+    text-decoration: none;
+    padding: 0 10px;
+    cursor: pointer;
+    color: #fff;
+    transition: .4s;
+    margin: 5px;
+  }
+
+  .login {
+    background-color: #f1f1f136;
+    border-radius: 5px;
+  }
+
+  .login:hover {
+    background-color: #c5c5c5d8!important;
+    color: rgb(78, 78, 78);
+  }
+
+  .lang {
+    margin: 0 10px;
+    padding: 0
+  }
+
+  .menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.164);
+    border-radius: 5px;
+    transition: .4s;
+  }
+
+  .select-lang {
+    -webkit-appearance: none;
+    padding: 10px 10px;
+    line-height: 18px;
+    font-size: 18px;
+    color: #fff;
+    background-color: rgba(165, 159, 159, 0.356);
+    border-radius: 4px;
+  }
+
+  .select-lang::after {
+    padding: 10px 10px;
+    margin: 20px;
+    background-color: rgba(165, 159, 159, 0.356);
+  }
+
+  .select-lang:after {
+    padding: 10px 10px;
+    line-height: 18px;
+    font-size: 18px;
+    color: #fff;
+    background-color: rgba(165, 159, 159, 0.356);
+  }
+
+  option {
+    padding: 10px 10px;
+    line-height: 18px;
+    font-size: 18px;
+    color: #fff;
+    background:rgba(165, 159, 159, 0.356);
+  }
+  
+  .select-lang:focus {
+    outline: none;
+  }
+  
+  .buttons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .button {
+    cursor: pointer;
+    width: 150px;
+    height: 80px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.397);
+    z-index: 3;
+    font-size: 24px;
+    margin: 0 10px;
+  }
+  
+  .button:hover {
+    background-color: rgba(255, 255, 255, 0.781);
+    color: rgb(88, 87, 87);
+  }
+  
+  .button:active {
+    background-color: rgba(255, 255, 255, 0.822);
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  

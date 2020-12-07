@@ -1,0 +1,155 @@
+@import "~materialize-css/dist/css/materialize.min.css";
+
+.registratin {
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    background: url(../images/bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cont {
+    min-height: 85vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.columns{
+  display: flex;
+}
+
+.wrap-login {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+.login-form {
+    background-color: rgba(255, 255, 255, 0.192);
+    text-align: center;
+    padding: 40px;
+}
+
+.login-form:focus {
+  outline: none;
+}
+
+.login-form-title {
+  position: relative;
+  padding: 20px;
+  font-size: 32px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.login-form-tittle-btn {
+  position: absolute;
+  font-size: 42px!important;
+  top: 25px;
+  left: 30px;
+}
+
+.input-area {
+    background-color: rgba(255, 255, 255, 0.856)!important;
+    margin: 10px!important;
+    height: 3rem!important;
+    padding: 10px!important;
+    font-size: 22px!important;
+    width: 20rem!important;
+}
+
+.input-area::placeholder{
+  color: rgba(0, 0, 0, 0.479)!important;
+}
+
+
+@keyframes pulse {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    33% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(3);
+      opacity: 0;
+    }
+  }
+  
+.button-login {
+    height: 4rem;
+    width: 20rem;
+    background: #4d5050;
+    box-shadow: 0 3px 2px 0 rgba(68, 68, 68, 0.137);
+    border-radius: 5px;
+    padding: 0 30px;
+    color: #fff;
+    font-size: 26px;
+    font-family: Lato, Arial, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 10px;
+}
+    
+.button-login:hover {
+    background: #2e3030!important;
+    box-shadow: 0 4px 17px rgba(0,0,0,0.2)!important;
+    transform: translate3d(0, -2px, 0)!important;
+}
+.button-login:active {
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
+    transform: translate3d(0, 1px, 0);
+}
+
+.btns {
+  position: relative;
+}
+
+.pulse {
+  position: relative;
+}
+.pulse:before, .pulse:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,.4);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    margin: auto;
+}
+.pulse:before {
+  animation: pulse 1.5s infinite linear;
+}
+.pulse:after {
+  animation: pulse 2s .4s infinite linear;
+}
+.pulse:hover:before, .pulse:hover:after {
+  display: none;
+}
+
+.login-text-butn {
+  border-radius: 35px;
+  background-color: rgba(255, 255, 255, 0.521);
+}
+
+
+
+

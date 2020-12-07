@@ -1,0 +1,32 @@
+.buttom-reg {
+    margin-top: 30px;
+  }
+
+.afterregblock {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+}
+
+.button-reset {
+    padding: 0;
+    position: absolute;
+    top: calc(30px + 1rem);
+    left:  calc(30px + 1rem);
+    height: 2rem;
+    width: 2rem;
+}
+
+.buttonimage {
+    font-size: 25px;
+}
+
+.buttonimage:active {
+    background-color: #fff;
+}
+  
