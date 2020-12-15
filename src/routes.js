@@ -5,14 +5,13 @@ import {ActivatePage} from './pages/ActivatePage'
 import {MainPage} from './pages/MainPage'
 import {RegistrationPage} from './pages/RegistrationPage'
 
-export const useRoutes = ({isAuthenticated, language}) => {
+export const useRoutes = ({isAuthenticated}) => {
 
-  console.log(language)
   if (isAuthenticated) {
     return (
       <Switch>
         <Route path="/" exact>
-          <MainPage l={language}/>
+          <MainPage/>
         </Route>
         <Route path="/activate/:code">
           <ActivatePage/>
@@ -25,7 +24,7 @@ export const useRoutes = ({isAuthenticated, language}) => {
   return (
     <Switch>
       <Route path="/" exact>
-        <MainPage l={language}/>
+        <MainPage/>
       </Route>
       <Route path="/reg" exact>
         <RegistrationPage />

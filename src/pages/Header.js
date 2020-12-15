@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
-import {NavLink, useHistory} from 'react-router-dom'
+import React, {useContext} from 'react'
+import {Link, useHistory} from 'react-router-dom'
 import {AuthContext} from '../context/AuthContext'
-import Logo from './Logo';
-import './style/Header.css';
+import {Logo} from './Logo'
+import './style/Header.css'
 
-function Header({l}) {
+export const Header = ({l}) => {
 
-    const {token, userId, nickname} = useContext(AuthContext)
+    const {token, nickname} = useContext(AuthContext)
 
     const history = useHistory()
     const auth = useContext(AuthContext)
@@ -22,15 +22,14 @@ function Header({l}) {
             <div className="Menu">
                 <div className="menu-item">{l.mainPage.about}</div>
                 <div className="menu-item">{l.mainPage.team}</div>
-                {token?<NavLink to={`/user/${userId}`} className="menu-item">{nickname}</NavLink>:<div></div>}
+                {token?<div className="menu-item">{nickname}</div>:<div></div>}
                 {token?
                 <div className="menu-item login" href="/" onClick={logoutHandler}>{l.mainPage.exitButton}</div>:
-                <NavLink className="menu-item login" to='/login'>{l.mainPage.login}</NavLink>
+                <Link className="menu-item login" to='/login'>{l.mainPage.login}</Link>
                 }
             </div>
          </header>
         );
     }
     
-    export default Header;
     

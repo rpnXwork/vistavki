@@ -68,6 +68,7 @@
 
   .select-lang {
     -webkit-appearance: none;
+    cursor: pointer;
     padding: 10px 10px;
     line-height: 18px;
     font-size: 18px;
@@ -120,7 +121,8 @@
     color: #fff;
     border: none;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.397);
+    background-color: rgba(255, 255, 255, 0.61);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     z-index: 3;
     font-size: 24px;
     margin: 0 10px;

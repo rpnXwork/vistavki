@@ -6,13 +6,18 @@ import jwt from 'jsonwebtoken'
 import './style/AuthPage.css'
 import { NavLink } from 'react-router-dom'
 import {API, PORT} from '../api'
-import Logo from './Logo'
+import {Logo} from './Logo'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faEye, faEyeSlash} from '@fortawesome/free-solid-svg-icons'
+import {LanguageContext} from '../context/LanguageContext'
 
 export const AuthPage = () => {
   const auth = useContext(AuthContext)
   const message = useMessage()
   const {request, error, clearError} = useHttp()
   const [mes, setMes] = useState(null)
+  const [passwordShow, setPasswordShow] = useState(false)
+  const [l] = useContext(LanguageContext)
 
   const [form, setForm] = useState({
     email: "", password: ""
@@ -76,7 +81,6 @@ export const AuthPage = () => {
     if (check(form.email, form.password)){
       try {
       const data = await request(`${API}${PORT}/auth`, 'POST', finaltoken)
-      console.log(data)
       auth.login(data.token,data.id,data.nickName,data.role)
       } catch (e) {
         setMes(e.message)
@@ -91,14 +95,15 @@ export const AuthPage = () => {
             <div className="wrap-login">
                 <div className="login-form" >
                     <div className="login-form-title">
-                    <NavLink  to='/'><i className='login-form-tittle-btn large material-icons'>arrow_back</i></NavLink>Login Page
+                    <NavLink  to='/'><i className='login-form-tittle-btn large material-icons'>arrow_back</i></NavLink>{l.LoginPage.tittle}
                     </div>
                 <div className="wrap-input" data-validate="Email is required">
+                
                     <input
                         className="input-area"
                         type="text"
                         name="email"
-                        placeholder="email"
+                        placeholder={l.LoginPage.emailPh}
                         value={form.emale}
                         onChange={changeHandler}
                         onKeyPress={keyHandler}
@@ -107,16 +112,20 @@ export const AuthPage = () => {
                     <span className="focus-input"></span>
                 </div>
                 <div className="wrap-input" data-validate="Password is required">
+                <button className='showpassword-btn-auth' onClick={()=>setPasswordShow(!passwordShow)}>
+                      <FontAwesomeIcon icon={passwordShow?faEye:faEyeSlash} size="lg"/>
+                    </button>
                     <input
                         className="input-area"
-                        type="password"
+                        type={passwordShow?"text":"password"}
                         name="password"
-                        placeholder="password"
+                        placeholder={l.LoginPage.passwordPh}
                         value={form.password}
                         onChange={changeHandler}
                         onKeyPress={keyHandler}
                         required
                     />
+
                     <span className="focus-input"></span>
                 </div>
                 <div className="btns">
@@ -127,12 +136,12 @@ export const AuthPage = () => {
                     onClick={loginHandler}
                     // disabled={loading}
                     onKeyPress={keyHandler}
-                    >Log In
+                    >{l.LoginPage.button}
                     </button>
                   </div>
                 <div className="login-text-butn">
-                  Have mo account? Go to 
-                  <NavLink className="registration-text" to='/reg'> registration </NavLink> page
+                  {l.LoginPage.text}
+                  <NavLink className="registration-text" to='/reg'> {l.LoginPage.link} </NavLink> {l.LoginPage.endtext}
                 </div>
                 </div>
             </div>

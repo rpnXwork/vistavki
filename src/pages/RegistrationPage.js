@@ -1,21 +1,24 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {NavLink} from 'react-router-dom'
 import {useMessage} from '../hooks/message.hook'
 import {useHttp} from '../hooks/http.hook'
 import jwt from 'jsonwebtoken'
-import Logo from './Logo';
-import { Timer } from '../components/Timer';
+import {Logo} from './Logo'
+import {Timer} from '../components/Timer'
 import './style/RegistrationPage.css'
-// import { Loader } from '../components/Loader';
-import { Loaderr } from '../components/Loaderr';
+import {Loaderr} from '../components/Loaderr'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faEye, faEyeSlash} from '@fortawesome/free-solid-svg-icons'
 import {API, PORT} from '../api'
-
+import {LanguageContext} from '../context/LanguageContext'
 
 export const RegistrationPage = () => {
     const message = useMessage()
     const [mes, setMes] = useState(null)
     const {loading, request, error, clearError} = useHttp()
     const [status, setStatus] = useState(false)
+    const [passwordShow, setPasswordShow] = useState(false)
+    const [l] = useContext(LanguageContext)
 
     const [form, setForm] = useState({
         email: "", password: "", name: "", surname: "", nickname: ""
@@ -33,8 +36,6 @@ export const RegistrationPage = () => {
         setMes(null)
         clearError()
       }, [error, mes, message, clearError])
-
-      
     
       useEffect(() => {
         window.M.updateTextFields()
@@ -157,7 +158,7 @@ export const RegistrationPage = () => {
                     <div className="login-form" >
                         <div className="login-form-title">
                         <NavLink  to='/login'><i className='login-form-tittle-btn large material-icons'>arrow_back</i></NavLink>
-                            Registration New User
+                            {l.registrationPage.tittle}
                         </div>
                     <div className='columns'>
                         <div className='column'>
@@ -165,7 +166,7 @@ export const RegistrationPage = () => {
                                 <input
                                     className="input-area"
                                     type="text"
-                                    name="email"
+                                    name={l.registrationPage.email}
                                     placeholder="email"
                                     value={form.email}
                                     onChange={changeHandler}
@@ -174,11 +175,14 @@ export const RegistrationPage = () => {
                                 <span className="focus-input"></span>
                             </div>
                             <div className="wrap-input" data-validate="Password is required">
+                            <button className='showpassword-btn-auth' onClick={()=>setPasswordShow(!passwordShow)}>
+                                <FontAwesomeIcon icon={passwordShow?faEye:faEyeSlash} size="lg"/>
+                            </button>
                                 <input
                                     className="input-area"
-                                    type="password"
+                                    type={passwordShow?"text":"password"}
                                     name="password"
-                                    placeholder="password"
+                                    placeholder={l.registrationPage.password}
                                     value={form.password}
                                     onChange={changeHandler}
                                     required
@@ -189,7 +193,7 @@ export const RegistrationPage = () => {
                                 <input
                                     className="input-area"
                                     type="text"
-                                    name="name"
+                                    name={l.registrationPage.name}
                                     placeholder="Name"
                                     value={form.name}
                                     onChange={changeHandler}
@@ -205,7 +209,7 @@ export const RegistrationPage = () => {
                                     className="input-area"
                                     type="text"
                                     name="nickname"
-                                    placeholder="Nickname"
+                                    placeholder={l.registrationPage.nickname}
                                     value={form.nickname}
                                     onChange={changeHandler}
                                     required
@@ -215,9 +219,9 @@ export const RegistrationPage = () => {
                             <div className="wrap-input" data-validate="Password is required">
                                 <input
                                     className="input-area"
-                                    type="password"
+                                    type={passwordShow?"text":"password"}
                                     name="repeatPassword"
-                                    placeholder="Repeat Password"
+                                    placeholder={l.registrationPage.repeatPassword}
                                     value={rpas.repeatPassword}
                                     onChange={reppas}
                                     required
@@ -228,7 +232,7 @@ export const RegistrationPage = () => {
                                 <input
                                     className="input-area"
                                     type="text"
-                                    name="surname"
+                                    name={l.registrationPage.surname}
                                     placeholder="Surname"
                                     value={form.surname}
                                     onChange={changeHandler}
@@ -252,7 +256,7 @@ export const RegistrationPage = () => {
                             onClick={registrationHandler}
                             disabled={loading}
                         >
-                          Register
+                          {l.registrationPage.button}
                         </button>
                     </div>
                     </div>

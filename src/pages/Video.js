@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import video from './video/video.webm'
 import './style/Video.css'
 

@@ -1,9 +1,7 @@
-import React, {useContext, useState, useEffect} from 'react'
-import Video from './Video';
-import {AuthContext} from '../context/AuthContext'
-import { Loaderr } from '../components/Loaderr';
+import React from 'react'
+import Video from './Video'
 
-const Main = ({l}) => {
+export const Main = ({l}) => {
 
     return (
         <div>
@@ -16,5 +14,4 @@ const Main = ({l}) => {
         </div>
     )
 }
-    
-export default Main;
+

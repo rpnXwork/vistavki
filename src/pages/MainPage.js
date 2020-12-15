@@ -1,9 +1,12 @@
-import React from 'react'
-import Main from './Main'
-import Header from './Header'
-import Footer from './Footer'
+import React, {useContext} from 'react'
+import {Main} from './Main'
+import {Header} from './Header'
+import {Footer} from './Footer'
+import {LanguageContext} from '../context/LanguageContext'
 
-export const MainPage = ({l}) => {
+export const MainPage = () => {
+
+    const [l] = useContext(LanguageContext)
 
     return (
         <>

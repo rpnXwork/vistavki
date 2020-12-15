@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import {useParams} from "react-router-dom";
+import {useParams} from "react-router-dom"
 import {useMessage} from '../hooks/message.hook'
-import {Timer} from '../components/Timer';
-import {Loaderr} from '../components/Loaderr';
+import {Timer} from '../components/Timer'
+import {Loaderr} from '../components/Loaderr'
 import {useHttp} from '../hooks/http.hook'
 import {API, PORT} from '../api'
 import './style/ActivatePage.css'
-
 
 export const ActivatePage = () => {
     const {request, error, clearError} = useHttp()
@@ -39,8 +38,8 @@ export const ActivatePage = () => {
     useEffect(()=>{
         setTimeout(() => {
             Confirmation()
-        }, 2000);
-    },[])
+        }, 1000);
+    })
 
     if (load === 0) 
     {

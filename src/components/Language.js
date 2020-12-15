@@ -3,7 +3,6 @@ import React, {useContext, useState, useEffect, useRef} from 'react'
 import {EN, RU, UA, BY} from '../languages/locale'
 import {AuthContext} from '../context/AuthContext'
 
-
 export const Language = () => {
 
     const context = useContext(AuthContext)
