@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {useParams} from "react-router-dom"
+import {useParams, NavLink} from "react-router-dom"
 import {useMessage} from '../hooks/message.hook'
 import {Timer} from '../components/Timer'
 import {Loaderr} from '../components/Loaderr'
@@ -11,7 +11,9 @@ export const ActivatePage = () => {
     const {request, error, clearError} = useHttp()
     const message = useMessage()
     const [mes, setMes] = useState(null)
+    const [status, setStatus] = useState(true)
     const [load, setLoad] = useState(0)
+
 
     let { code } = useParams();
 
@@ -36,9 +38,11 @@ export const ActivatePage = () => {
     }
 
     useEffect(()=>{
-        setTimeout(() => {
+        if(status){
             Confirmation()
-        }, 1000);
+            setStatus(false)
+        }
+        
     })
 
     if (load === 0) 
@@ -55,7 +59,7 @@ export const ActivatePage = () => {
         <div className="loading-center">    
             <div className="activayionpage-text">
                 Something Wrong? try again 
-                You will redirect to registration page after  <Timer timeout={5000} adress={'/reg'}/> sec.
+                You will redirect to <NavLink to="reg">registration</NavLink> page after  <Timer timeout={50000} adress={'/reg'}/> sec.
             </div>
         </div>
         )
@@ -64,7 +68,7 @@ export const ActivatePage = () => {
         <div className="loading-center">    
             <div className="activayionpage-text">
                 Congratulation! You part of the system!
-                You will redirect to logina page after <Timer timeout={5000} adress={'/login'}/> sec.
+                You will redirect to logina page after <Timer timeout={50000} adress={'/login'}/> sec.
             </div>
         </div>
     )

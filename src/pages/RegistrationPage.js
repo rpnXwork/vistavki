@@ -53,58 +53,58 @@ export const RegistrationPage = () => {
         let ema = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return ema.test(email);
       }
-    // const passvalidate = (password) => {
-    //     let passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,99}$/
-    //     return passw.test(password)
-    // }
+    const passvalidate = (password) => {
+        let passw = /^[a-z0-9_-]{3,16}$/
+        return passw.test(password)
+    }
     
     const check = (email, password, repeatPassword, nickname, name, surname) => {
     if (!email){
-        setMes("Enter Email!")
+        setMes(l.validationMessages.email)
         return false
     }
     if (!validate(email)){
-        setMes("Wrong Email format")
+        setMes(l.validationMessages.emailvalid)
         return false
     }
     if (!password){
-        setMes("Enter Password!")
+        setMes(l.validationMessages.password)
         return false
     }
     if (password.length < 8){
-        setMes("Password low than 8 symbol")
+        setMes(l.validationMessages.passwordLen)
         return false
     }
-    // if (!passvalidate(password)){
-    //     setMes("Password must contain at least one numericdigit,</br>one uppercase and one lowercase letter")
-    //     return false
-    // }
+    if (!passvalidate(password)){
+        setMes(l.validationMessages.passwordvalid)
+        return false
+    }
     if (!repeatPassword){
-        setMes("Repeat you Password")
+        setMes(l.validationMessages.repeatPassword)
         return false
     }
     if (password !== repeatPassword){
-        setMes("RepeatPassword not match witg Password")
+        setMes(l.validationMessages.repeatPasswordMatch)
         return false
     }
     if (!nickname){
-        setMes("Enter Nickname!")
+        setMes(l.validationMessages.nickname)
         return false
     }
     if (nickname.length < 3){
-        setMes("NickName must be more 3 than symbols")
+        setMes(l.validationMessages.nicknameLen)
         return false
     }
     if (!name){
-        setMes("Enter you Name Bitch!")
+        setMes(l.validationMessages.name)
         return false
     }
-    if (name.length <= 3){
-        setMes("Name must be more than 3 symbols")
+    if (name.length < 3){
+        setMes(l.validationMessages.nameLen)
         return false
     }
     if (!surname){
-        setMes("Surname need!")
+        setMes(l.validationMessages.surname)
         return false
     }
     setMes(null)
