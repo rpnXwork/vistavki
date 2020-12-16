@@ -54,7 +54,7 @@ export const RegistrationPage = () => {
         return ema.test(email);
       }
     const passvalidate = (password) => {
-        let passw = /^[a-z0-9_-]{3,16}$/
+        let passw = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,32}$/
         return passw.test(password)
     }
     

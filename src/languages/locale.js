@@ -28,7 +28,7 @@ const RU = {
         email: "Введите Email",
         emailvalid: "Неправильный формат Email",
         password: "Введите Пароль",
-        passwordvalid: "Пароль может модержать только цифры, буквы и _",
+        passwordvalid: "Пароль должен cодержать буквуи цифру",
         passwordLen: "Пароль должен быть не короче 8 символов",
         repeatPassword: "Повторите пароль",
         repeatPasswordMatch: "Повторенный пароль не совпадает",
