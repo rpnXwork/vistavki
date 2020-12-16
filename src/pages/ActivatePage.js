@@ -59,7 +59,7 @@ export const ActivatePage = () => {
         <div className="loading-center">    
             <div className="activayionpage-text">
                 Something Wrong? try again 
-                You will redirect to <NavLink to="reg">registration</NavLink> page after  <Timer timeout={50000} adress={'/reg'}/> sec.
+                You will redirect to <NavLink to="/reg">registration</NavLink> page after  <Timer timeout={10000} adress={'/reg'}/> sec.
             </div>
         </div>
         )
@@ -68,7 +68,7 @@ export const ActivatePage = () => {
         <div className="loading-center">    
             <div className="activayionpage-text">
                 Congratulation! You part of the system!
-                You will redirect to logina page after <Timer timeout={50000} adress={'/login'}/> sec.
+                You will redirect to <NavLink to="/login">login</NavLink> page after <Timer timeout={10000} adress={'/login'}/> sec.
             </div>
         </div>
     )
