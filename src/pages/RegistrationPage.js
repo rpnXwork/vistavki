@@ -120,6 +120,7 @@ export const RegistrationPage = () => {
             surname: "",
             nickname: "",
           })
+          setRpas("")
     }
 
     const registrationHandler = async () => {
@@ -166,8 +167,8 @@ export const RegistrationPage = () => {
                                 <input
                                     className="input-area"
                                     type="text"
-                                    name={l.registrationPage.email}
-                                    placeholder="email"
+                                    name="email"
+                                    placeholder={l.registrationPage.email}
                                     value={form.email}
                                     onChange={changeHandler}
                                     required
@@ -193,8 +194,8 @@ export const RegistrationPage = () => {
                                 <input
                                     className="input-area"
                                     type="text"
-                                    name={l.registrationPage.name}
-                                    placeholder="Name"
+                                    name="name"
+                                    placeholder={l.registrationPage.name}
                                     value={form.name}
                                     onChange={changeHandler}
                                     required
@@ -232,8 +233,8 @@ export const RegistrationPage = () => {
                                 <input
                                     className="input-area"
                                     type="text"
-                                    name={l.registrationPage.surname}
-                                    placeholder="Surname"
+                                    name="surname"
+                                    placeholder={l.registrationPage.surname}
                                     value={form.surname}
                                     onChange={changeHandler}
                                     required
