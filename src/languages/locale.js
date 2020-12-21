@@ -46,18 +46,18 @@ const BY = {
     LoginPage: { tittle: 'Уваход', button: 'Увайсцi', emailPh: 'Email', passwordPh: 'Пароль', text: 'Няма акаўнту? ', link: 'Старонка Рэгiстрацыi', endtext: ''},
     registrationPage: { tittle: 'Рэгiстрацыя', button: 'Зарэгестрыравацца', email: 'Email', password: 'Пароль', repeatPassword: 'Паўтарыць Пароль', name: 'Iмя', surname: 'Фамiлiя', nickname: 'Нiк' },
     validationMessages: {
-        email: "Введите Email",
-        emailvalid: "Wrong Email Format",
-        password: "Enter Password",
-        passwordvalid: "Пароль может модержать только цифры, буквы и _",
-        passwordLen: "Password low than 8 symbol",
-        repeatPassword: "Repeat you password",
-        repeatPasswordMatch: "Passwords not match",
-        nickname : "Enter Nickname",
-        nicknameLen : "NickName must be more 3 than symbols",
-        name : "Enter you Name",
-        nameLen : "Name must be more than 3 symbols",
-        surname: "Enter you Surname"
+        email: "Увяздзiце Email",
+        emailvalid: "Няправiльны фармат Email",
+        password: "Увядзiце Парлоль",
+        passwordvalid: "Пароль можа быць толькi з цыфрау, буквау ды _",
+        passwordLen: "Пароль павiнен быць не карацей за 8 сiмвалы",
+        repeatPassword: "Паутарыце пароль",
+        repeatPasswordMatch: "Паурораны палоль не супадае",
+        nickname : "Увяздзiце Нiк",
+        nicknameLen : "Нiк павiнен быць не карацей за 3 сiмвалы",
+        name : "Увядзiце ",
+        nameLen : "Iмя павiнна быць не карацей за 3 сiмвалы",
+        surname: "Увядзiце Фамiлiю"
     }
 }
 
